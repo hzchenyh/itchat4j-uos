@@ -46,6 +46,9 @@ public class SimpleDemo implements IMsgHandlerFace {
 				System.out.print(WechatTools.getGroupIdList());
 				System.out.print(Core.getInstance().getGroupMemeberMap());
 			}
+			if (text.equals("444")){
+				System.out.println(WechatTools.getContactList());
+			}
 			return text;
 		}
 		return null;

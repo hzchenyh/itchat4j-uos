@@ -47,7 +47,7 @@ public class WechatTools {
 
 	/**
 	 * <p>
-	 * 通过RealName获取本次UserName
+	 * 通过NickName获取UserName
 	 * </p>
 	 * <p>
 	 * 如NickName为"yaphone"，则获取UserName=
@@ -63,6 +63,21 @@ public class WechatTools {
 	public static String getUserNameByNickName(String nickName) {
 		for (JSONObject o : core.getContactList()) {
 			if (o.getString("NickName").equals(nickName)) {
+				return o.getString("UserName");
+			}
+		}
+		return null;
+	}
+
+
+	/**
+	 * 根据备注名获取UserName
+	 * @param remarkName
+	 * @return
+	 */
+	public static String getUserNameByRemarkName(String remarkName) {
+		for (JSONObject o : core.getContactList()) {
+			if (o.getString("RemarkName").equals(remarkName)) {
 				return o.getString("UserName");
 			}
 		}
